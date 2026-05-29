@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "credex-sdk"
+version = "0.1.0"
+description = "CredEx AI SDK — Wrap your agent once, every action gets verified, remembered, and anchored."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "CredEx AI", email = "team@credexai.live" }]
+keywords = ["ai", "agents", "verification", "mcp", "xrpl", "trust", "credex"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.0.0"]
+anthropic = ["anthropic>=0.20.0"]
+langchain = ["langchain-core>=0.1.0"]
+all = ["openai>=1.0.0", "anthropic>=0.20.0", "langchain-core>=0.1.0"]
+
+[project.urls]
+Homepage = "https://credexai.live"
+Documentation = "https://credexai.live/docs"
+Repository = "https://github.com/credexai-labs/credex-sdk"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/credex"]
