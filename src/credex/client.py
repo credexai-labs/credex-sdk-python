@@ -47,7 +47,7 @@ class CredExClient:
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {config.api_key}",
-                "User-Agent": f"credex-sdk/0.1.0",
+                "User-Agent": f"credex-sdk/0.2.0",
             },
         )
         self._request_id = 0

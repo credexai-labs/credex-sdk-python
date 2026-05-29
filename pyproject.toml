@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "credex-sdk"
-version = "0.1.0"
+version = "0.2.0"
 description = "CredEx AI SDK — Wrap your agent once, every action gets verified, remembered, and anchored."
 readme = "README.md"
 license = "MIT"
@@ -31,7 +31,7 @@ all = ["openai>=1.0.0", "anthropic>=0.20.0", "langchain-core>=0.1.0"]
 [project.urls]
 Homepage = "https://credexai.live"
 Documentation = "https://credexai.live/docs"
-Repository = "https://github.com/credexai-labs/credex-sdk"
+Repository = "https://github.com/credexai-labs/credex-sdk-python"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/credex"]
