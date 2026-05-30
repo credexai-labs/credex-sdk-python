@@ -4,8 +4,8 @@ CredEx AI SDK — Wrap your agent once, every action gets verified, remembered, 
 Usage:
     import credex
 
-    # Initialize
-    credex.init(api_key="credex_...")
+    # Zero-friction — no API key needed, auto-provisions on first use
+    credex.init()
 
     # Patch OpenAI (auto-verify all completions)
     credex.patch_openai()
@@ -23,10 +23,11 @@ Usage:
     chain.invoke(input, config={"callbacks": [CredExHandler()]})
 """
 
-__version__ = "0.1.0"
+__version__ = "0.3.0"
 
 from credex.client import CredExClient
 from credex.config import CredExConfig, init, get_client
+
 from credex.decorators import verify, remember, audit
 
 # Convenience patchers
