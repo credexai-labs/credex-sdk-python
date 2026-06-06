@@ -79,7 +79,7 @@ def _auto_provision(base_url: str, agent_name: str, verbose: bool) -> Optional[d
     payload = {
         "fingerprint": _machine_fingerprint(),
         "agent_name": agent_name or "sdk-agent",
-        "sdk_version": "0.3.0",
+        "sdk_version": "0.4.0",
     }
 
     if verbose:
@@ -110,7 +110,7 @@ def _auto_provision(base_url: str, agent_name: str, verbose: bool) -> Optional[d
                     status = "Resumed existing" if data.get("provisioned") == "existing" else "Created new"
                     print(
                         f"[credex] {status} free-tier account. "
-                        f"{limits.get('interactions', 15)} free interactions included. {limits.get('upgrade_note', '')}",
+                        f"{limits.get('interactions', 1000)} API calls included.",
                         file=sys.stderr,
                     )
                 return data
@@ -173,7 +173,7 @@ def init(
     Zero-friction mode: call with no arguments. The SDK will:
     1. Check CREDEX_API_KEY env var
     2. Check ~/.credex/credentials.json for a saved key
-    3. Auto-provision a free-tier key from the server (free calls, 14-day trial)
+    3. Auto-provision a free-tier key from the server (50 interactions, 14-day trial)
 
     The provisioned key is saved locally so subsequent runs just work.
 
